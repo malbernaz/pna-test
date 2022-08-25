@@ -4,7 +4,7 @@ export function setup(element: HTMLButtonElement) {
     const res = await fetch(`http://${ip}:4321/say`, {
       method: "POST",
       headers: {
-        // "Access-Control-Request-Private-Network": "true",
+        "Access-Control-Request-Private-Network": "true",
         "Content-Type": "application/json",
         Accept: "application/json",
       },
