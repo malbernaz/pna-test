@@ -1,11 +1,14 @@
 export function setup(element: HTMLButtonElement) {
   element.addEventListener("click", async () => {
     const ip = await getIP();
-    const res = await fetch(`http://${ip}:4321`, {
+    const res = await fetch(`http://${ip}:4321/say`, {
       method: "POST",
       headers: {
-        "Access-Control-Request-Private-Network": "true",
+        // "Access-Control-Request-Private-Network": "true",
+        "Content-Type": "application/json",
+        Accept: "application/json",
       },
+      credentials: "include",
       body: JSON.stringify({
         say: "hello to my little friend",
       }),
